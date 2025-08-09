@@ -36,5 +36,10 @@ out/
 ### VS Code ###
 .vscode/
 
-### config ###
-/src/main/resources/application.yml
+### secret info ###
+.properties
+.yml
+.yaml
+.env
+*.key
+*.pem
