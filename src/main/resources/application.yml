@@ -1,25 +1,12 @@
-server:
-  port: 8989
-
 spring:
   application:
-    name: woosso_scg
+    name: scg
+  profiles:
+    active: dev
+  config:
+    import: optional:configserver:http://localhost:9000
+
   cloud:
-    gateway:
-      server:
-        webflux:
-          routes:
-            - id: user
-              uri: http://localhost:8081/
-              predicates:
-                - Path=/scg/api/user/**
-              filters:
-                - StripPrefix=1
-
-
-
-
-logging:
-  level:
-    org.springframework.cloud.gateway: debug
-    reactor.netty: debug
+    config:
+      username: admin
+      password: P@ssw0rd
